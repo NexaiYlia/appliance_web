@@ -3,8 +3,6 @@ package com.nexai.servlet;
 import com.nexai.comparator.ByCapacityApplianceComparator;
 import com.nexai.model.Appliance;
 import com.nexai.model.Model;
-import com.nexai.service.ApplianceManipulatorService;
-import com.nexai.service.impl.ApplianceManipulatorServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Comparator;
 import java.util.List;
 
 public class SortServlet extends HttpServlet {
@@ -21,8 +18,8 @@ public class SortServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         Model model = Model.getInstance();
         List<Appliance> applianceList = model.getModel();
-//        ByCapacityApplianceComparator comparator = new ByCapacityApplianceComparator();
-//        applianceList.sort(comparator);
+        ByCapacityApplianceComparator comparator = new ByCapacityApplianceComparator();
+        applianceList.sort(comparator);
         req.setAttribute("applianceNames", applianceList);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/sort.jsp");
