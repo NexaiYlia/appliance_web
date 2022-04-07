@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 
 public class Model {
     private static Model instance = new Model();
-    Appliance fridge = new Appliance("Fridge", 200,300,"white");
-    Appliance kettle = new Appliance("Kettle", 25,20,"red");
-    Appliance vacuumCleaner = new Appliance("Vacuum cleaner", 120,125,"pink");
+    Appliance fridge = new Appliance("холодильник", 200,300,"white");
+    Appliance kettle = new Appliance("чайник", 25,20,"red");
+    Appliance vacuumCleaner = new Appliance("пылесос", 120,125,"pink");
 
     public static List<Appliance> model;
 
@@ -29,12 +29,15 @@ public class Model {
     }
 
     public List<String> listName() {
-        return model.stream()
-                .map(Appliance::getName)
-                .collect(Collectors.toList());
+        List<String> list = new ArrayList<>();
+        for (Appliance appliance : model) {
+            String name = appliance.getName();
+            list.add(name);
+        }
+        return list;
     }
 
     public List<Appliance> getModel() {
-        return List.copyOf(model);
+        return model;
     }
 }

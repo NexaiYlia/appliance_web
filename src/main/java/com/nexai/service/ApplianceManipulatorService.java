@@ -7,7 +7,7 @@ import java.util.List;
 public interface ApplianceManipulatorService {
     double calculateSumPowerConsumption(List<? extends Appliance> applianceList);
 
-    void sortApplianceByPower(List<? extends Appliance> applianceList);
+    void sortApplianceByPower(List<Appliance> applianceList);
 
     void sortApplianceByPowerStream(List<? extends Appliance> applianceList);
 

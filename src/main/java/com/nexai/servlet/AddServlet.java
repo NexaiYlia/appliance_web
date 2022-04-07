@@ -19,6 +19,7 @@ public class AddServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         String name = req.getParameter("name");
         Double capacity = Double.parseDouble(req.getParameter("capacity"));
         Double price = Double.parseDouble(req.getParameter("price"));

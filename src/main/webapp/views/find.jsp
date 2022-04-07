@@ -1,36 +1,37 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%request.setCharacterEncoding("UTF-8");%>
 <html>
     <head>
         <title>find_appliance</title>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
-
-    <body class="w3-light-grey">
-        <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
+    <body>
             <h1>Параметры поиска приборов</h1>
-        </div>
-    <form method="post" class="w3-selection w3-light-grey w3-padding">
+    <form method="post">
                     <label>Введите минимальную мощность:
-                        <input type="text" name="min-capacity" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                        <input type="text" name="min-capacity" ><br />
                     </label>
                      <label>Введите максимальную мощность:
-                     <input type="text" name="max-capacity" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                     <input type="text" name="max-capacity" ><br />
                       </label>
                     <label>Введите минимальную цену:
-                        <input type="text" name="min-price" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                        <input type="text" name="min-price" ><br />
                     </label>
                      <label>Введите максимальную цену:
-                     <input type="text" name="max-price" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                     <input type="text" name="max-price"><br />
                      </label>
-                   <button type="submit" class="w3-btn w3-green w3-round-large w3-margin-bottom">Найти</button>
+                   <button type="submit">Найти</button>
                 </form>
-            </div>
-        </div>
-            </div>
-        </div>
 
-        <div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
-            <button class="w3-btn w3-round-large" onclick="location.href='/'">Назад</button>
-        </div>
+            <h1>Результат поиска прибора:</h1>
+            <c:forEach items="${result}" var="one">
+               Название:${one.name} <br>
+               Мощность:${one.capacity}<br>
+               Цена:${one.price}<br>
+               Цвет:${one.color}<br>
+               <br>
+            </c:forEach>
+            <button onclick="location.href='/'">Назад</button>
     </body>
 </html>

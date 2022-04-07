@@ -21,6 +21,7 @@ public class FindServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         List<Appliance> list = new ArrayList<>();
         Double minCapacity = Double.parseDouble(req.getParameter("min-capacity"));
         Double maxCapacity = Double.parseDouble(req.getParameter("max-capacity"));
@@ -36,7 +37,7 @@ public class FindServlet extends HttpServlet {
             }
         }
 
-        req.setAttribute("applianceFind", list);
+        req.setAttribute("result", list);
         doGet(req, resp);
     }
 }

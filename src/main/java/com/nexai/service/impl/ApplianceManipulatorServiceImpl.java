@@ -23,7 +23,7 @@ public class ApplianceManipulatorServiceImpl implements ApplianceManipulatorServ
     }
 
     @Override
-    public  void sortApplianceByPower(List<? extends Appliance> applianceList) {
+    public  void sortApplianceByPower(List<Appliance> applianceList) {
         ByCapacityApplianceComparator byCapacityApplianceComparator = new ByCapacityApplianceComparator();
         applianceList.sort(byCapacityApplianceComparator);
     }
