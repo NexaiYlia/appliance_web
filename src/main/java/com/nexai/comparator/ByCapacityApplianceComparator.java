@@ -9,7 +9,6 @@ public class ByCapacityApplianceComparator implements Comparator<Appliance> {
     public int compare(Appliance o1, Appliance o2) {
         double powerO1 = o1.getCapacity();
         double powerO2 = o2.getCapacity();
-        int compare = Double.compare(powerO1, powerO2);
-        return compare;
+        return Double.compare(powerO1, powerO2);
     }
 }

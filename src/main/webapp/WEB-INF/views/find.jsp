@@ -7,7 +7,7 @@
         <title>find_appliance</title>
     </head>
     <body>
-            <h1>Параметры поиска приборов</h1>
+    <h1>Параметры поиска приборов</h1>
     <form method="post">
                     <label>Введите минимальную мощность:
                         <input type="text" name="min-capacity" ><br />
@@ -24,7 +24,7 @@
                    <button type="submit">Найти</button>
                 </form>
 
-            <h1>Результат поиска прибора:</h1>
+    <h1>Результат поиска прибора:</h1>
             <c:forEach items="${result}" var="one">
                Название:${one.name} <br>
                Мощность:${one.capacity}<br>

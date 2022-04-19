@@ -5,11 +5,10 @@
         <title>add_new_appliance</title>
     </head>
     <body>
-     <h1>Бытовые приборы</h1>
-        <% if (request.getAttribute("applianceName") != null) {
-                    out.println("Бытовой прибор " + request.getAttribute("applianceName") + " добавлен!");
-                }
-               %>
+        <h1>Бытовые приборы</h1>
+            <% if (request.getAttribute("applianceName") != null) {
+             out.println("Бытовой прибор " + request.getAttribute("applianceName") + " добавлен!");}
+             %>
         <h2>Добавьте прибор:</h2>
          <form method="post" >
          <label>Название:
@@ -26,6 +25,6 @@
           </label>
           <button type="submit" >Добавить</button>
                 </form>
-            <button onclick="location.href='/'">Назад</button>
-        </body>
+          <button onclick="location.href='/'">Назад</button>
+    </body>
 </html>
